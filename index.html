@@ -1,0 +1,32 @@
+<html>
+<body>
+<h2>Web Technology Quiz</h2>
+<p id="q"></p>
+<button onclick="check(0)" id="b0"></button><br><br>
+<button onclick="check(1)" id="b1"></button><br><br>
+<button onclick="check(2)" id="b2"></button><br><br>
+<p id="r"></p>
+<script>
+let quiz=[
+["What does HTML stand for?", "Hyper Text Markup Language", "High Text Machine Language", "Hyper Tool Markup Language", 0],
+["Which language is used for styling?", "HTML", "CSS", "JavaScript", 1],
+["Which tag creates a link in HTML?", "link", "a", "href", 1],
+["Which language makes website interactive?", "HTML", "CSS", "JavaScript", 2]
+];
+let i=0, s=0;
+function show(){
+document.getElementById("q").innerText=(i+1)+". "+quiz[i][0];
+document.getElementById("b0").innerText=quiz[i][1];
+document.getElementById("b1").innerText=quiz[i][2];
+document.getElementById("b2").innerText=quiz[i][3];
+}
+function check(n){
+if(n==quiz[i][4]) s++;
+i++;
+if(i<quiz.length){show();}
+else{document.getElementById("q").innerText="";document.getElementById("b0").style.display="none";document.getElementById("b1").style.display="none";document.getElementById("b2").style.display="none";document.getElementById("r").innerText="Your Score: "+s+"/"+quiz.length;}
+}
+show();
+</script>
+</body>
+</html>
